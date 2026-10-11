@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>{{ T('callback_title') }}</h1>
+<form method="post" action="/callback" class="card">
+ <label for="cn">{{ T('f_name') }}</label><input id="cn" name="name" required maxlength="80" autocomplete="name">
+ <label for="cm">{{ T('f_mobile') }}</label><input id="cm" name="mobile" required inputmode="numeric" pattern="[0-9]{10}" maxlength="10" autocomplete="tel">
+ <label for="cv">{{ T('f_village') }}</label><input id="cv" name="village" required maxlength="80">
+ <label for="cc">{{ T('c_concern') }}</label><textarea id="cc" name="concern" required maxlength="500" rows="4"></textarea>
+ <label class="check"><input type="checkbox" name="consent" value="on" required> <span>{{ T('consent_text') }}</span></label>
+ <button class="btn primary" type="submit">{{ T('c_submit') }}</button>
+</form>
+{% endblock %}

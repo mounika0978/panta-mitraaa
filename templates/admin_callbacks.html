@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>{{ T('admin_title') }}</h1>
+{% for r in rows %}
+<article class="card">
+ <p><strong>{{ r.name }}</strong> · {{ r.mobile }} · {{ r.village }} · <span class="tag tag-{{ r.status }}">{{ T(r.status) }}</span></p>
+ <p>{{ r.concern }}</p>
+ <small>{{ T('created') }}: {{ r.created_at }}</small>
+ {% if r.status == 'pending' %}
+ <form method="post" action="/admin/callbacks/{{ r.id }}/resolve"><button class="btn primary" type="submit">{{ T('mark_resolved') }}</button></form>
+ {% endif %}
+</article>
+{% endfor %}
+{% endblock %}

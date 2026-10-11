@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>{{ a.farmer.name }} · {{ T('crop_' ~ a.farmer.crop) }}</h1>
+<p>{{ a.farmer.village }}, {{ a.farmer.district }} · {{ mask(a.farmer.mobile) }}{% if a.farmer.field_name %} · {{ a.farmer.field_name }}{% endif %}</p>
+
+<section class="card">
+ <p><strong>{{ T('stage') }}:</strong> {{ bi(a.stage.te, a.stage.en) }} · <strong>{{ T('das') }}:</strong> {{ a.das }}</p>
+ <form method="get" class="inline">
+  <label for="scenario">{{ T('scenario') }}</label>
+  <select id="scenario" name="scenario">
+   {% for s in scenarios %}<option value="{{ s.id }}" data-te="{{ s.name_te }}" data-en="{{ s.name_en }}" {% if s.id == scenario %}selected{% endif %}>{{ s.name_en }}</option>{% endfor %}
+  </select>
+  <button class="btn" type="submit">{{ T('switch') }}</button>
+ </form>
+</section>
+
+<section class="risk risk-{{ a.risk }}" aria-live="polite">
+ <svg class="ic big" aria-hidden="true"><use href="#i-{{ a.risk }}"/></svg>
+ <div><small>{{ T('risk_title') }}</small><strong class="risk-label">{{ T('risk_' ~ a.risk) }}</strong></div>
+</section>
+
+<section class="card">
+ <h2>{{ T('actions_title') }}</h2>
+ <ul>{% for x in a.actions %}<li>{{ bi(x.te, x.en) }}</li>{% endfor %}</ul>
+ <a class="btn" href="/callback">{{ T('ask_expert') }}</a>
+</section>
+
+<details class="card" open>
+ <summary>{{ T('why_title') }}</summary>
+ <ul>{% for r in a.reasons %}<li><code>{{ r.id }}</code> {{ bi(r.te, r.en) }}</li>{% endfor %}</ul>
+ <p><strong>{{ T('rule_ids') }}:</strong> <code>{{ a.fired_ids | join(', ') }}</code></p>
+ <p><strong>{{ T('advice_ids') }}:</strong> <code>{{ a.advice_ids | join(', ') }}</code></p>
+</details>
+
+<section class="card">
+ <h2>{{ T('weather_title') }}</h2>
+ <table>
+  <tr><th>{{ T('rain_7d') }}</th><td>{{ a.weather.rain_7d_mm }}</td></tr>
+  <tr><th>{{ T('dry_days') }}</th><td>{{ a.weather.consecutive_dry_days }}</td></tr>
+  <tr><th>{{ T('forecast_5d') }}</th><td>{{ a.weather.forecast_5d_mm }}</td></tr>
+  <tr><th>{{ T('data_source') }}</th><td>{{ bi(a.weather.source_te, a.weather.source_en) }}</td></tr>
+  <tr><th>{{ T('data_date') }}</th><td>{{ a.weather.data_date }}</td></tr>
+  <tr><th>{{ T('rules_version') }}</th><td>{{ a.rules_version }}</td></tr>
+ </table>
+</section>
+{% include '_disclaimer.html' %}
+{% endblock %}

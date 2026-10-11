@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="te" data-lang="te">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ tt('app_title', 'en') }}</title>
+<script>try{var l=localStorage.getItem('lang');if(l==='en'||l==='te'){document.documentElement.dataset.lang=l;document.documentElement.lang=l;}}catch(e){}</script>
+<link rel="stylesheet" href="/static/css/style.css">
+<script src="/static/js/app.js" defer></script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+ <symbol id="i-low" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="currentColor" stroke-width="2.4"/></symbol>
+ <symbol id="i-medium" viewBox="0 0 24 24"><path d="M12 3l10 18H2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M12 10v5M12 18v.5" stroke="currentColor" stroke-width="2.4"/></symbol>
+ <symbol id="i-high" viewBox="0 0 24 24"><path d="M8 2h8l6 6v8l-6 6H8l-6-6V8z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M12 7v6M12 16v.5" stroke="currentColor" stroke-width="2.4"/></symbol>
+ <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 4h16v12H9l-5 4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+ <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M5 11a7 7 0 0014 0M12 18v3" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+ <symbol id="i-send" viewBox="0 0 24 24"><path d="M3 12l18-9-6 18-3-8z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+</svg>
+{% if demo %}<div class="demo-badge" role="status">{{ T('demo_badge') }}</div>{% endif %}
+<header class="top">
+ <a class="brand" href="/">{{ T('app_title') }}</a>
+ <button type="button" id="lang-btn" class="btn small" aria-label="Language / భాష">English</button>
+</header>
+<nav class="nav" aria-label="Main">
+ <a href="/">{{ T('nav_home') }}</a>
+ <a href="/callback">{{ T('nav_callback') }}</a>
+ <a href="/upload">{{ T('nav_upload') }}</a>
+</nav>
+<main>{% block content %}{% endblock %}</main>
+<footer><p>{{ T('prototype_note') }}</p></footer>
+{% include '_chat.html' %}
+</body>
+</html>

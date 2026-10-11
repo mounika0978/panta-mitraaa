@@ -1,0 +1,21 @@
+<div id="chat" data-farmer="{{ farmer_id or '' }}" data-scenario="{{ scenario or '' }}"
+     data-hello-te="{{ tt('chat_hello','te') }}" data-hello-en="{{ tt('chat_hello','en') }}"
+     data-err-te="{{ tt('chat_err','te') }}" data-err-en="{{ tt('chat_err','en') }}"
+     data-listening-te="{{ tt('listening','te') }}" data-listening-en="{{ tt('listening','en') }}">
+ <button type="button" id="chat-fab" class="fab" aria-label="{{ tt('chat_open','en') }}">
+  <svg class="ic" aria-hidden="true"><use href="#i-chat"/></svg><span>{{ T('chat_title') }}</span>
+ </button>
+ <section id="chat-panel" class="panel" hidden aria-label="{{ tt('chat_title','en') }}">
+  <div class="panel-head"><strong>{{ T('chat_title') }}</strong><button type="button" id="chat-close" class="btn small">{{ T('close') }}</button></div>
+  <div id="chat-log" class="log" aria-live="polite"></div>
+  <p id="hint-nomic" class="hint" hidden>{{ T('chat_hint_nomic') }}</p>
+  <p id="hint-denied" class="hint" hidden>{{ T('chat_hint_denied') }}</p>
+  <p id="hint-novoice" class="hint" hidden>{{ T('chat_hint_novoice') }}</p>
+  <label class="voice-toggle"><input type="checkbox" id="chat-voice"> {{ T('chat_voice') }}</label>
+  <form id="chat-form" class="chat-form" autocomplete="off">
+   <input id="chat-input" type="text" maxlength="300" required data-ph-te="{{ tt('chat_placeholder','te') }}" data-ph-en="{{ tt('chat_placeholder','en') }}" aria-label="{{ tt('chat_placeholder','en') }}">
+   <button type="button" id="chat-mic" class="btn icon" aria-label="{{ tt('chat_mic','en') }}"><svg class="ic" aria-hidden="true"><use href="#i-mic"/></svg></button>
+   <button type="submit" class="btn primary icon" aria-label="{{ tt('chat_send','en') }}"><svg class="ic" aria-hidden="true"><use href="#i-send"/></svg></button>
+  </form>
+ </section>
+</div>

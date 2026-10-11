@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>{{ T('upload_title') }}</h1>
+<form method="post" action="/upload" enctype="multipart/form-data" class="card">
+ <label for="file">{{ T('upload_choose') }}</label>
+ <input id="file" name="file" type="file" accept="image/jpeg,image/png,image/webp" required>
+ <button class="btn primary" type="submit">{{ T('upload_btn') }}</button>
+</form>
+{% if result %}
+<section class="card">
+ <h2>{{ T('upload_result') }}</h2>
+ <img class="photo" src="/uploads/{{ result.filename }}" alt="">
+ <p>{% if result.status == 'quality_ok' %}{{ T('review_quality_ok') }}{% else %}{{ T('review_retake') }}{% endif %}</p>
+ <p><strong>{{ bi(result.message_te, result.message) }}</strong></p>
+ {% include '_disclaimer.html' %}
+</section>
+{% endif %}
+<h2>{{ T('upload_gallery') }}</h2>
+<div class="gallery">{% for g in gallery %}<img class="photo" src="/uploads/{{ g.filename }}" alt="" loading="lazy">{% endfor %}</div>
+{% endblock %}

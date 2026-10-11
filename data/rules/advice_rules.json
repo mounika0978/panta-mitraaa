@@ -1,0 +1,25 @@
+{"version": "0.1-demo",
+ "_note": "PLACEHOLDER: general timing and practice advice only. No doses, quantities or product names. Validate with KVK/ANGRAU before real use. crop and stage may be '*' (wildcard).",
+ "rules": [
+  {"id":"ADV-ANY-LOW","crop":"*","stage":"*","risk":"low","actions":[
+    {"en":"Continue normal field monitoring.","te":"సాధారణంగా పొలాన్ని గమనిస్తూ ఉండండి."},
+    {"en":"Check the weather update again in a few days.","te":"కొన్ని రోజుల్లో వాతావరణ సమాచారాన్ని మళ్లీ చూడండి."},
+    {"en":"Keep field drains and bunds in good condition so that rain can be used well.","te":"వర్షపు నీరు బాగా ఉపయోగపడేలా కాలువలు, గట్లను సరిగ్గా ఉంచండి."}]},
+  {"id":"ADV-ANY-MED","crop":"*","stage":"*","risk":"medium","actions":[
+    {"en":"Check soil moisture by hand at root depth in the morning.","te":"ఉదయం వేళ వేర్ల లోతులో మట్టి తేమను చేత్తో పరీక్షించండి."},
+    {"en":"Avoid unnecessary field work that dries the soil.","te":"మట్టిని ఆరబెట్టే అనవసర పొలం పనులను నివారించండి."},
+    {"en":"Talk to neighbouring farmers and your agriculture officer about local conditions.","te":"స్థానిక పరిస్థితుల గురించి పక్క రైతులతో, వ్యవసాయ అధికారితో మాట్లాడండి."}]},
+  {"id":"ADV-ANY-HIGH","crop":"*","stage":"*","risk":"high","actions":[
+    {"en":"Check soil moisture by hand today and watch the leaves for wilting in the afternoon.","te":"ఈరోజే మట్టి తేమను చేత్తో పరీక్షించండి; మధ్యాహ్నం ఆకులు వాడిపోతున్నాయేమో గమనించండి."},
+    {"en":"Avoid field work during strong wind and heat.","te":"బలమైన గాలి, వేడి సమయంలో పొలం పనులను నివారించండి."},
+    {"en":"Contact your nearest KVK or agricultural officer for advice on your crop stage.","te":"మీ పంట దశ గురించి సలహా కోసం సమీప KVK లేదా వ్యవసాయ అధికారిని సంప్రదించండి."},
+    {"en":"Use the expert callback request on this site.","te":"ఈ సైట్‌లోని నిపుణుల కాల్‌బ్యాక్ అభ్యర్థనను ఉపయోగించండి."}]},
+  {"id":"ADV-GN-FLW-HIGH","crop":"groundnut","stage":"flowering_pegging","risk":"high","actions":[
+    {"en":"Flowering and pegging are sensitive to water shortage; ask your agricultural officer about local options for this stage.","te":"పుష్పించే, ఊడలు దిగే దశ నీటి కొరతకు సున్నితం; ఈ దశలో స్థానిక ఎంపికల గురించి మీ వ్యవసాయ అధికారిని అడగండి."}]},
+  {"id":"ADV-GN-EST-MED","crop":"groundnut","stage":"establishment","risk":"medium","actions":[
+    {"en":"Young seedlings are sensitive to dry soil; note how well they have emerged and tell your officer.","te":"చిన్న మొలకలు పొడి మట్టికి సున్నితం; ఎంత బాగా మొలకెత్తాయో గమనించి మీ అధికారికి చెప్పండి."}]},
+  {"id":"ADV-RG-FLW-HIGH","crop":"red_gram","stage":"flowering_podding","risk":"high","actions":[
+    {"en":"Water shortage during flowering and podding may affect red gram; contact your KVK for local advice.","te":"కంది పుష్పించే, కాయ దశలో నీటి కొరత ప్రభావం చూపవచ్చు; స్థానిక సలహా కోసం KVKని సంప్రదించండి."}]},
+  {"id":"ADV-ML-TIL-MED","crop":"millet","stage":"tillering","risk":"medium","actions":[
+    {"en":"Check soil moisture more often during the tillering stage of millet.","te":"సజ్జలో పిలకల దశలో మట్టి తేమను తరచుగా గమనించండి."}]}
+ ]}

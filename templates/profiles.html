@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>{{ T('my_profiles') }}</h1>
+{% if not farmers %}<p class="card">{{ T('no_profiles') }}</p>{% endif %}
+{% for f in farmers %}
+<article class="card">
+ <h2>{{ f.name }} · {{ T('crop_' ~ f.crop) }}</h2>
+ <p>{{ f.village }}, {{ f.district }} · {{ mask(f.mobile) }}{% if f.field_name %} · {{ f.field_name }}{% endif %}</p>
+ <a class="btn primary" href="/farmers/{{ f.id }}">{{ T('view_advice') }}</a>
+</article>
+{% endfor %}
+{% endblock %}

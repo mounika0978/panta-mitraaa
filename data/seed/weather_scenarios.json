@@ -1,0 +1,5 @@
+{"scenarios": [
+ {"id":"normal_season","name_en":"Normal season","name_te":"సాధారణ వర్షాకాలం","rain_7d_mm":38,"consecutive_dry_days":1,"forecast_5d_mm":22},
+ {"id":"early_dry_spell","name_en":"Early dry spell","name_te":"ప్రారంభ పొడి వాతావరణం","rain_7d_mm":6,"consecutive_dry_days":8,"forecast_5d_mm":4},
+ {"id":"severe_dry_spell","name_en":"Severe dry spell","name_te":"తీవ్రమైన పొడి వాతావరణం","rain_7d_mm":0,"consecutive_dry_days":16,"forecast_5d_mm":2}
+]}

@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>{{ T('register_title') }}</h1>
+<form method="post" action="/farmers" class="card">
+ <label for="name">{{ T('f_name') }}</label>
+ <input id="name" name="name" required maxlength="80" autocomplete="name">
+ <label for="mobile">{{ T('f_mobile') }}</label>
+ <input id="mobile" name="mobile" required inputmode="numeric" pattern="[0-9]{10}" maxlength="10" autocomplete="tel">
+ <label for="village">{{ T('f_village') }}</label>
+ <input id="village" name="village" required maxlength="80">
+ <label for="district">{{ T('f_district') }}</label>
+ <select id="district" name="district" required>{% for d in districts %}<option>{{ d }}</option>{% endfor %}</select>
+ <label for="crop">{{ T('f_crop') }}</label>
+ <select id="crop" name="crop" required>
+  <option value="groundnut" data-te="{{ tt('crop_groundnut','te') }}" data-en="{{ tt('crop_groundnut','en') }}">{{ tt('crop_groundnut','en') }}</option>
+  <option value="red_gram" data-te="{{ tt('crop_red_gram','te') }}" data-en="{{ tt('crop_red_gram','en') }}">{{ tt('crop_red_gram','en') }}</option>
+  <option value="millet" data-te="{{ tt('crop_millet','te') }}" data-en="{{ tt('crop_millet','en') }}">{{ tt('crop_millet','en') }}</option>
+ </select>
+ <label for="sowing_date">{{ T('f_sowing') }}</label>
+ <input id="sowing_date" name="sowing_date" type="date" required>
+ <label for="field_name">{{ T('f_field') }}</label>
+ <input id="field_name" name="field_name" maxlength="80">
+ <label class="check"><input type="checkbox" name="consent" value="on" required> <span>{{ T('consent_text') }}</span></label>
+ <button class="btn primary" type="submit">{{ T('save') }}</button>
+</form>
+<section class="card">
+ <h2>{{ T('find_profiles') }}</h2>
+ <form method="get" action="/farmers/lookup">
+  <label for="lm">{{ T('f_mobile') }}</label>
+  <input id="lm" name="mobile" required inputmode="numeric" pattern="[0-9]{10}" maxlength="10">
+  <button class="btn" type="submit">{{ T('find') }}</button>
+ </form>
+</section>
+{% endblock %}

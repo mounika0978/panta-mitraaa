@@ -1,0 +1,19 @@
+{"_note": "PLACEHOLDER: stage ranges (days after sowing) are illustrative assumptions. Validate against ANGRAU/KVK crop calendars before real use.",
+ "crops": {
+  "groundnut": {"stages": [
+    {"id":"establishment","from":0,"to":20,"te":"మొలక దశ","en":"Establishment"},
+    {"id":"flowering_pegging","from":21,"to":45,"te":"పుష్పించే, ఊడలు దిగే దశ","en":"Flowering and pegging"},
+    {"id":"pod_development","from":46,"to":90,"te":"కాయ అభివృద్ధి దశ","en":"Pod development"},
+    {"id":"maturity","from":91,"to":130,"te":"పక్వ దశ","en":"Maturity"}]},
+  "red_gram": {"stages": [
+    {"id":"establishment","from":0,"to":30,"te":"మొలక దశ","en":"Establishment"},
+    {"id":"vegetative","from":31,"to":90,"te":"పెరుగుదల దశ","en":"Vegetative growth"},
+    {"id":"flowering_podding","from":91,"to":150,"te":"పుష్పించే, కాయ దశ","en":"Flowering and podding"},
+    {"id":"maturity","from":151,"to":200,"te":"పక్వ దశ","en":"Maturity"}]},
+  "millet": {"stages": [
+    {"id":"establishment","from":0,"to":15,"te":"మొలక దశ","en":"Establishment"},
+    {"id":"tillering","from":16,"to":35,"te":"పిలకల దశ","en":"Tillering"},
+    {"id":"flowering","from":36,"to":60,"te":"కంకి, పుష్పించే దశ","en":"Panicle and flowering"},
+    {"id":"grain_filling","from":61,"to":85,"te":"గింజ నిండే దశ","en":"Grain filling"},
+    {"id":"maturity","from":86,"to":110,"te":"పక్వ దశ","en":"Maturity"}]}
+ }}

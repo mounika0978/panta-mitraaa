@@ -1,0 +1,19 @@
+{"version": "0.1-demo",
+ "_note": "PLACEHOLDER: validate against KVK or agro-meteorological guidance before real use.",
+ "rules": [
+  {"id":"DS-L0","risk":"low","note":"PLACEHOLDER: validate against KVK or agro-meteorological guidance before real use.",
+   "conditions":[{"field":"consecutive_dry_days","op":">=","value":0}],
+   "reason_en":"No strong dry-spell signal from the current inputs.","reason_te":"ప్రస్తుత సమాచారం ప్రకారం బలమైన పొడి వాతావరణ సంకేతం లేదు."},
+  {"id":"DS-M1","risk":"medium","note":"PLACEHOLDER: validate against KVK or agro-meteorological guidance before real use.",
+   "conditions":[{"field":"consecutive_dry_days","op":">=","value":7}],
+   "reason_en":"About a week or more without rain; soil moisture may be falling.","reason_te":"సుమారు వారం లేదా అంతకన్నా ఎక్కువ రోజులు వర్షం లేదు; మట్టి తేమ తగ్గుతూ ఉండవచ్చు."},
+  {"id":"DS-M2","risk":"medium","note":"PLACEHOLDER: validate against KVK or agro-meteorological guidance before real use.",
+   "conditions":[{"field":"rain_7d_mm","op":"<","value":10},{"field":"forecast_5d_mm","op":"<","value":10}],
+   "reason_en":"Little rain in the last week and little forecast; rainfall may stay low.","reason_te":"గత వారం తక్కువ వర్షం, రాబోయే రోజుల్లో కూడా తక్కువ అంచనా; వర్షం తక్కువగా ఉండవచ్చు."},
+  {"id":"DS-H1","risk":"high","note":"PLACEHOLDER: validate against KVK or agro-meteorological guidance before real use.",
+   "conditions":[{"field":"consecutive_dry_days","op":">=","value":15}],
+   "reason_en":"Many days in a row without rain, which may stress the crop.","reason_te":"చాలా రోజులుగా వరుసగా వర్షం లేదు; ఇది పంటపై ఒత్తిడి కలిగించవచ్చు."},
+  {"id":"DS-H2","risk":"high","note":"PLACEHOLDER: validate against KVK or agro-meteorological guidance before real use.",
+   "conditions":[{"field":"consecutive_dry_days","op":">=","value":10},{"field":"forecast_5d_mm","op":"<","value":5}],
+   "reason_en":"A long dry period has passed and little rain is forecast, so the dry spell may continue.","reason_te":"చాలా రోజులుగా వర్షం లేదు, రాబోయే రోజుల్లో కూడా తక్కువ వర్షం అంచనా; పొడి వాతావరణం కొనసాగవచ్చు."}
+ ]}
